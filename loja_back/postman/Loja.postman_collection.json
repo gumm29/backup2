@@ -1,0 +1,742 @@
+{
+	"info": {
+		"_postman_id": "65c2b567-0af7-4594-ad0b-ce98bcf43e9b",
+		"name": "Loja",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "usuario",
+			"item": [
+				{
+					"name": "endereco",
+					"item": [
+						{
+							"name": "retorna endereco",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/cliente/endereco",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"cliente",
+										"endereco"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleta endereco /id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/cliente/endereco/c02f70de-c363-45ce-86c2-c0abfbd344c2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"cliente",
+										"endereco",
+										"c02f70de-c363-45ce-86c2-c0abfbd344c2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cria endereco",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rua\": \"teste\",\n    \"numero\": \"231\",\n    \"complemento\": \"\",\n    \"bairro\": \"uhauhuaha\",\n    \"cidade\": \"kaijaij\",\n    \"uf\": \"ijaijaija\",\n    \"cep\": \"031651845184891318461\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/cliente/endereco",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"cliente",
+										"endereco"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edita endereco /id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rua\": \"teste2\",\n    \"numero\": \"231\",\n    \"complemento\": \"\",\n    \"bairro\": \"uhauhuaha\",\n    \"cidade\": \"kaijaij\",\n    \"uf\": \"ijaijaija\",\n    \"cep\": \"031651845184891318461\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/cliente/endereco/c02f70de-c363-45ce-86c2-c0abfbd344c2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"cliente",
+										"endereco",
+										"c02f70de-c363-45ce-86c2-c0abfbd344c2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"\",\n    \"senha\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cadastro usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"gustavo\",\n    \"email\": \"gustavomm29@hotmail.com\",\n    \"senha\": \"123456\",\n    \"perfil\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/cliente/cadastro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"cliente",
+								"cadastro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verifica conta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"gustavomm29@hotmail.com\",\n    \"tokenEmail\": \"20\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/cliente/validaUsuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"cliente",
+								"validaUsuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reenvio email token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"gustavomm29@hotmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/cliente/reenvioEmail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"cliente",
+								"reenvioEmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Pegar response e gravar em uma variavel da colecao', ()=>{",
+									"  var data = pm.response.json()",
+									"  var token = data.hash ",
+									"  pm.collectionVariables.set(\"token\", token)",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"gustavomm29@hotmail.com\",\n    \"senha\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/auth/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Troca Senha",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"gustavomm29@hotmail.com\",\n    \"novaSenha\": \"654321\",\n    \"emailToken\": \"19\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/cliente/trocaSenha",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"cliente",
+								"trocaSenha"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retorna nome",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJwZXJmaWwiOjEsImFsZyI6IkhTMjU2In0.eyJpc3MiOiJhcGkgZGUgcHJvZHV0b3MiLCJzdWIiOiIxIiwiaWF0IjoxNjQwMTc3NTA4LCJleHAiOjE2NDAyNTc1MDh9.n86ctCBqoGmdPYFteRjCLtxtiqQbGtNXe0qXD_GtDso",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/autor/gustavomm29@hotmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"autor",
+								"gustavomm29@hotmail.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "produto",
+			"item": [
+				{
+					"name": "lista produtos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cria produto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"produto\": \"lapis2ssddddddss\",\n    \"descricao\": \"lalalalalalla\",\n    \"preco\": 104440,\n    \"precoDe\": 10,\n    \"quantidade\": 20,\n    \"urlName\": \"lapis\",\n    \"publicado\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "produto/id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/produto/b8796858-7ccb-47b3-bf29-9f84d475f782",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"produto",
+								"b8796858-7ccb-47b3-bf29-9f84d475f782"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edita produto/id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"produto\": \"lapis2\",\n    \"descricao\": \"lalalalalalla\",\n    \"preco\": 50,\n    \"precoDe\": 10,\n    \"urlName\": \"lapis\",\n    \"publicado\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/produto/b8796858-7ccb-47b3-bf29-9f84d475f782",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"produto",
+								"b8796858-7ccb-47b3-bf29-9f84d475f782"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "publica produto/id",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"publicado\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/produto/b8796858-7ccb-47b3-bf29-9f84d475f782?publicado=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"produto",
+								"b8796858-7ccb-47b3-bf29-9f84d475f782"
+							],
+							"query": [
+								{
+									"key": "publicado",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleta produto/id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/produto/b8796858-7ccb-47b3-bf29-9f84d475f782",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"produto",
+								"b8796858-7ccb-47b3-bf29-9f84d475f782"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "carrinho",
+			"item": [
+				{
+					"name": "lista carrinho",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/carrinho",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"carrinho"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get carrinho cliente",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/carrinho/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"carrinho",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lista carrinho cliente",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/carrinho/d603465a-d128-4ac3-9f02-04f63ed75ca6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"carrinho",
+								"d603465a-d128-4ac3-9f02-04f63ed75ca6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adiciona produto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"produto\":\"5b1926d9-0b64-4077-884a-917601d64a26\",\n    \"quanidade\": 1,\n    \"preco\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/carrinho",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"carrinho"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edita produto id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"produto\":\"5b1926d9-0b64-4077-884a-917601d64a26\",\n    \"quanidade\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/carrinho/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"carrinho",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleta produto id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idProdutoCliente\":\"5b1926d9-0b64-4077-884a-917601d64a26\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/carrinho/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"carrinho",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}

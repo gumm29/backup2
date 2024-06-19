@@ -1,0 +1,55 @@
+version: "3"
+services:
+  banco:
+    image: banco
+    build:
+      dockerfile: ./banco/banco.dockerfile
+      context: .
+    volumes:
+      - data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_HOSTNAME: localhost
+      POSTGRES_DB: sou_qa
+    ports:
+      - 5432:5432
+    networks:
+      - producao
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints: [node.role == manager]
+  back:
+    image: back
+    build:
+      dockerfile: ./back/back.dockerfile
+      context: .
+    ports:
+      - 8081:8081
+    networks:
+      - producao
+    depends_on:
+      - "banco"
+    deploy:
+     replicas: 2
+     restart_policy:
+       condition: on-failure
+     placement:
+      constraints: [node.role == worker]
+  visualizador:
+    image: dockersamples/visualizer:stable
+    ports:
+      - 8082:8090
+    volumes:
+      - /var/run/docker.stock:/var/run/docker.stock
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+volumes:
+  data:
+networks:
+  producao:
+

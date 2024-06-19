@@ -1,0 +1,14 @@
+#salvar image como tar
+sudo docker save <image> > <filename>.tar
+
+#criar vm com mais espaço
+docker-machine create --driver virtualbox --virtualbox-memory 8096 <vmName>
+
+#enviar imagem para vm
+docker-machine scp <filename>.tar vm1:/home/docker/
+
+#dentro da vm
+docker load < <filename>.tar
+
+#dentro da vm rodar docker stack
+docker stack deploy --compose-file docker-compose.yml <nameStack>

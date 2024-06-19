@@ -1,0 +1,18 @@
+comando para fazer backup do banco: pg_dump <dbname> > arquivo.sql
+comando para listar tabelas: \dt
+comando para listar bancos: \db
+comandos para listar: \l
+comando para sair do banco: \q
+entrar no psql: sudo -i -u postgres
+
+#############
+docker
+############
+comando para criar imagem e rodar: sudo docker run --name banco -e POSTGRES_PASSWORD=postgres -p 5431:5432 -v "/var/lib/postgresql:/var" -d postgres
+
+comando para rodar .sql dentro de container: sudo docker exec -it banco -U postgres --password -f /var/dumpTeste.sql
+
+comando para entrar no container: sudo docker exec -it banco -U postgres --password
+
+docker exec banco pg_dump -U postgres > /var/lib/postgresql/dockerDump.sql
+

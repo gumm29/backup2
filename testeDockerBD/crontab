@@ -1,0 +1,1 @@
+* * * * *  echo "ola" >> /var/log/cron.log 

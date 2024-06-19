@@ -1,0 +1,47 @@
+html, body {
+  height: 100%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body{
+  background: linear-gradient(to right, #061c27 5%, #0a2e44 5% 95%,  #061c27 5%);
+  overflow-x: hidden;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #fff;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+.active{
+  border: solid 0.5px white;
+}
